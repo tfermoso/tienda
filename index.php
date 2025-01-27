@@ -13,7 +13,7 @@ if (isset($_POST["username"])) {
             if (password_verify($password, $row["password"])) {
                 session_start();
                 $_SESSION["username"] = $username;
-                header("Location: tienda.php");
+                header("Location: tienda");
             } else {
                 $error = "Usuario o contraseña incorrectos";
             }
@@ -21,7 +21,10 @@ if (isset($_POST["username"])) {
             $error = "Usuario o contraseña incorrectos";
         }
     } catch (Exception $e) {
-        $error="Error al iniciar sesión, contacte con el administrador";
+        
+        $error="Error al iniciar sesión, contacte con el administrador".$e->getMessage();
+        echo "<br>";
+        echo DB_USER. "  ".DB_PASS;
     }
 
 }
