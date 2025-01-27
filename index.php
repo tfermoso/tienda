@@ -9,8 +9,13 @@ if (isset($_POST["username"])) {
     $stm->execute();
     $row=$stm->fetch(PDO::FETCH_ASSOC);
     if($row){
-        var_dump($row);
-        exit();
+       if(password_verify($password, $row["password"])){
+           session_start();
+           $_SESSION["username"] = $username;
+           header("Location: tienda.php");
+       }else{
+           $error = "Usuario o contraseña incorrectos";
+       }
     }else{
         $error = "Usuario o contraseña incorrectos";
     }
