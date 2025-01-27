@@ -1,10 +1,36 @@
+<?php
+if (isset($_POST["username"])) {
+    include("conexiondb.php");
+    $username = $_POST["username"];
+    $password = $_POST["password"];
+    $sql = "SELECT * FROM usuarios WHERE username = :username";
+    $stm=$conexion->prepare($sql);
+    $stm->bindParam(":username", $username);
+    $stm->execute();
+    $row=$stm->fetch(PDO::FETCH_ASSOC);
+    if($row){
+        var_dump($row);
+        exit();
+    }else{
+        $error = "Usuario o contraseña incorrectos";
+    }
+
+
+
+}
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tienda</title>
 </head>
+
 <body>
     <form action="" method="post">
         <label for="username">Nombre de usuario</label>
@@ -12,6 +38,11 @@
         <label for="password">Contraseña</label>
         <input type="password" name="password" id="password" required placeholder="Password">
         <input type="submit" value="Iniciar sesión">
+        <?php if(isset($error)){
+            echo "<p>".$error."</p>";
+        }
+            ?>
     </form>
 </body>
+
 </html>
