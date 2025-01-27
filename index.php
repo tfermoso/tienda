@@ -1,26 +1,28 @@
 <?php
 if (isset($_POST["username"])) {
-    include("conexiondb.php");
-    $username = $_POST["username"];
-    $password = $_POST["password"];
-    $sql = "SELECT * FROM usuarios WHERE username = :username";
-    $stm=$conexion->prepare($sql);
-    $stm->bindParam(":username", $username);
-    $stm->execute();
-    $row=$stm->fetch(PDO::FETCH_ASSOC);
-    if($row){
-       if(password_verify($password, $row["password"])){
-           session_start();
-           $_SESSION["username"] = $username;
-           header("Location: tienda.php");
-       }else{
-           $error = "Usuario o contraseña incorrectos";
-       }
-    }else{
-        $error = "Usuario o contraseña incorrectos";
+    try {
+        include("conexiondb.php");
+        $username = $_POST["username"];
+        $password = $_POST["password"];
+        $sql = "SELECT * FROM usuarios WHERE username = :username";
+        $stm = $conexion->prepare($sql);
+        $stm->bindParam(":username", $username);
+        $stm->execute();
+        $row = $stm->fetch(PDO::FETCH_ASSOC);
+        if ($row) {
+            if (password_verify($password, $row["password"])) {
+                session_start();
+                $_SESSION["username"] = $username;
+                header("Location: tienda.php");
+            } else {
+                $error = "Usuario o contraseña incorrectos";
+            }
+        } else {
+            $error = "Usuario o contraseña incorrectos";
+        }
+    } catch (Exception $e) {
+        $error="Error al iniciar sesión, contacte con el administrador";
     }
-
-
 
 }
 
@@ -45,10 +47,10 @@ if (isset($_POST["username"])) {
         <label for="password">Contraseña</label>
         <input type="password" name="password" id="password" required placeholder="Password">
         <input type="submit" value="Iniciar sesión">
-        <?php if(isset($error)){
-            echo "<p>".$error."</p>";
+        <?php if (isset($error)) {
+            echo "<p>" . $error . "</p>";
         }
-            ?>
+        ?>
     </form>
 </body>
 
