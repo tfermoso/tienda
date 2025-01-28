@@ -9,7 +9,7 @@ if (isset($_SESSION["username"])) {
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -32,10 +32,10 @@ if (isset($_SESSION["username"])) {
                 <ul>
                     <li><a href="tienda"><i class="fa-solid fa-store"></i>Inicio</a></li>
                     <li><a href="proveedores"><i class="fa-solid fa-boxes-packing"></i>Proveedores</a></li>
-                    <li><a href="clientes">Clientes</a></li>
-                    <li><a href="categorias">Categorias</a></li>
-                    <li><a href="productos">Productos</a></li>
-                    <li><a href="ventas">Ventas</a></li>
+                    <li><a href="clientes"><i class="fa-solid fa-user"></i>Clientes</a></li>
+                    <li><a href="categorias"><i class="fa-solid fa-list"></i>Categorias</a></li>
+                    <li><a href="productos"><i class="fa-brands fa-product-hunt"></i>Productos</a></li>
+                    <li><a href="ventas"><i class="fa-brands fa-sellsy"></i>Ventas</a></li>
                 </ul>
             </aside>
             <section>
