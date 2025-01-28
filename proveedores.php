@@ -18,7 +18,7 @@ $result = $conexion->query($sql);
             </thead>
             <tbody>
                 <?php
-                while ($fila = $result->fetchAll()) {
+                while ($fila = $result->fetch(PDO::FETCH_ASSOC)) {
                     echo "<tr>";
                     echo "<td>" . $fila['id'] . "</td>";
                     echo "<td>" . $fila['nombre'] . "</td>";
