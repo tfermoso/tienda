@@ -34,11 +34,11 @@ $result = $conexion->query($sql);
         <form action="nuevo_proveedor.php" method="post">
             <div class="form-group">
                 <label for="nombre">Nombre:</label>
-                <input type="text" name="nombre" id="nombre" class="form-control">
+                <input type="text" name="nombre" id="nombre" class="form-control" required placeholder="Nombre del proveedor">
             </div>
             <div class="form-group">
                 <label for="web">Web:</label>
-                <input type="text" name="web" id="web" class="form-control">
+                <input type="text" name="web" id="web" class="form-control" required placeholder="http://">
             </div>
             <div class="form-group">
                 <input type="submit" value="Guardar" class="btn btn-primary">
