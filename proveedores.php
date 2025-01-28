@@ -50,7 +50,7 @@ $result = $conexion->query($sql);
             <div>
                 <h3>Nueva dirección</h3>
                 <form action="nueva_direccion.php" method="post">
-                    <input type="hidden" name="idproveedro" value="<?php echo $_GET["id"] ?>">
+                    <input type="hidden" name="idproveedor" value="<?php echo $_GET["id"] ?>">
                     <label for="calle">calle</label>
                     <input type="text" name="calle" id="calle" required placeholder="Calle">
                     <label for="numero">Número</label>
