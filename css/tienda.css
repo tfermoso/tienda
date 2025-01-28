@@ -34,3 +34,8 @@ aside ul li{
 aside ul li i{
     margin-right: 10px;
 }
+.contacto{
+    display: flex;
+    justify-content: space-between;
+    
+}

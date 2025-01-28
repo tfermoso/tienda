@@ -44,6 +44,19 @@ $result = $conexion->query($sql);
                 <input type="submit" value="Guardar" class="btn btn-primary">
             </div>
         </form>
+        <hr>
+        <?php if(isset($_GET["id"])){ ?>
+        <div class="contacto">
+            <div>
+                <h3>Nueva dirección</h3>
+
+            </div>
+            <div>
+                <h3>Nuevo teléfono</h3>
+            </div>
+
+        </div>
+        <?php } ?>
       
     </div>
 
