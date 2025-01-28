@@ -23,7 +23,9 @@ $result = $conexion->query($sql);
                     echo "<td>" . $fila['id'] . "</td>";
                     echo "<td>" . $fila['nombre'] . "</td>";
                     echo "<td>" . $fila['web'] . "</td>";
-                    echo "<td><a href='editar_proveedor.php?id=" . $fila['id'] . "'>Editar</a> | <a href='eliminar_proveedor.php?id=" . $fila['id'] . "'>Eliminar</a> | <a href='proveedores?id=" . $fila['id'] . "'>Añadir</a>| <a href='proveedor?id=" . $fila['id'] . "'>Ver</a></td>";
+                    echo "<td>
+                    <a href='editar_proveedor.php?id=" . $fila['id'] . "'>Editar</a> |
+                    <a href='eliminar_proveedor.php?id=" . $fila['id'] . "'>Eliminar</a> | <a href='proveedores?id=" . $fila['id'] . "'>Añadir</a>| <a href='proveedor?id=" . $fila['id'] . "'>Ver</a></td>";
                     echo "</tr>";
                 }
                 ?>
