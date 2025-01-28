@@ -6,6 +6,7 @@ if (isset($_SESSION["username"])) {
     header("Location: index");
     exit();
 }
+include("conexiondb.php");
 ?>
 
 <!DOCTYPE html>
