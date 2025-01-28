@@ -29,7 +29,7 @@ $result = $conexion->query($sql);
                 ?>
             </tbody>
         </table>
-        <a href="nuevo_proveedor.php" class="btn btn-primary">Nuevo Proveedor</a>
+      
     </div>
 
 </section>
