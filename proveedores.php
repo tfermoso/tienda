@@ -49,7 +49,19 @@ $result = $conexion->query($sql);
         <div class="contacto">
             <div>
                 <h3>Nueva dirección</h3>
-
+                <form action="nueva_direccion.php" method="post">
+                    <input type="hidden" name="idproveedro" value="<?php echo $_GET["id"] ?>">
+                    <label for="calle">calle</label>
+                    <input type="text" name="calle" id="calle" required placeholder="Calle">
+                    <label for="numero">Número</label>
+                    <input type="text" name="numero" id="numero" required placeholder="Número"> 
+                    <label for="comuna">Comuna</label>
+                    <input type="text" name="comuna" id="comuna" required placeholder="Comuna">
+                    <label for="ciudad">Ciudad</label>
+                    <input type="text" name="ciudad" id="ciudad" required placeholder="Ciudad">
+                    <input type="submit" value="Guardar">
+                    <input type="reset" value="Cancelar">
+                </form>
             </div>
             <div>
                 <h3>Nuevo teléfono</h3>
