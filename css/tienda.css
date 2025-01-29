@@ -39,3 +39,26 @@ aside ul li i{
     justify-content: space-between;
     
 }
+.proveedor-info {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+.proveedor-info h3 {
+    color: #333;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 5px;
+}
+.proveedor-info p {
+    color: #555;
+    margin: 5px 0;
+}
+
+.telefonos {
+    margin-top: 20px;
+}
+.telefonos p {
+    background-color: #f9f9f9;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
