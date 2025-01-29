@@ -16,7 +16,7 @@ $result = $stm->execute();
 ?>
 <section>
     <?php
-    $direccions=[];
+    $direcciones=[];
     $telefonos=[];
     $row=$stm->fetch(PDO::FETCH_ASSOC);
     if($row) {
@@ -25,7 +25,16 @@ $result = $stm->execute();
         <h4>{$row['nombre']}</h4>
         <p>Web: <a href='{$row['web']}'>{$row['web']}</a></p>
         </div>";
+        if($row["iddireccion"]!=null){
+            $direcciones[] = [
+                "iddireccion" => htmlspecialchars($row["iddireccion"]),
+                "calle" => htmlspecialchars($row["calle"]),
+                "numero" => htmlspecialchars($row["numero"]),
+            ];
+        }
     }
+var_dump($direcciones);
+exit();
     ?>
 
 
